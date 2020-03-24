@@ -30,6 +30,7 @@ console.log(creds)
             console.log('token stringified',token)
             localStorage.setItem('token', token);
             history.push('/friends');
+            console.log('history',history)
         })
         .catch(error => console.log('can not seem to login buddy', error));
     
@@ -44,11 +45,19 @@ console.log(creds)
       <form onSubmit={handleSubmit}>
       <label>
         Username:
-        <input name='username' value={creds.username} onChange={handleChange} />
+        <input 
+        type='text' 
+        name='username' 
+        value={creds.username} 
+        onChange={handleChange} />
       </label>
       <label>
         Password:
-        <input type='password' name='password' value={creds.password} onChange={handleChange} />
+        <input 
+        type='password' 
+        name='password' 
+        value={creds.password} 
+        onChange={handleChange} />
       </label>
         <button 
           type="submit" >
