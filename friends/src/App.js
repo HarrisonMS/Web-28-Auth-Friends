@@ -1,12 +1,35 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import PrivateRoute from './utils/PrivateRoute';
+
+import Login from './components/login'
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <h1 className='App-header'>Auth Friends</h1>
+    <div className='App-header'>
+      <p>Auth Friends</p>
+      <div className='links'>
+        <Link to="/friends">Friends</Link>
+        <Link to="/login">Login</Link> 
+      </div>
     </div>
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route component={Login} />
+      </Switch>
+    </div>
+  </Router>
+ 
   );
 }
 
 export default App;
+
+
+// <div className="App">
+// <h1 className='App-header'>Auth Friends</h1>
+// <Login />
+// </div>
