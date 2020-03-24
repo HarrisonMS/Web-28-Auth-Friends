@@ -26,8 +26,9 @@ console.log(creds)
         .post(endpoint, creds)
         .then(response => {
           console.log('res in login post',response)
-            const token = response.data.payload;
-            sessionStorage.setItem('token', token);
+            const token = JSON.stringify(response.data.payload);
+            console.log('token stringified',token)
+            localStorage.setItem('token', token);
             history.push('/friends');
         })
         .catch(error => console.log('can not seem to login buddy', error));
