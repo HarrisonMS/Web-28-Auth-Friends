@@ -31,6 +31,29 @@
 .form-container {
   color: rgb(127, 0, 218);
   display: flex;
+  
   justify-content: center;
   
+}
+.friend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
+
+}
+.friends-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+ 
+
+
 }
