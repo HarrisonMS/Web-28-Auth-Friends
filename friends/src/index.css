@@ -3,7 +3,7 @@ body {
   font-family: 'Indie Flower', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: rgb(17, 17, 17);
 }
 
 code {

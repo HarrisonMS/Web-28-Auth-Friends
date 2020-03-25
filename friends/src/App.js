@@ -7,39 +7,26 @@ import Login from './components/login'
 import axiosWithAuth from './utils/axiosWithAuth';
 import { Friend } from './components/Friend';
 
-function App(props) {
-  const {friends} = props
+function App() {
   return (
     <>
-    
-    <Router>
-    <div className="App">
-    <div className='App-header'>
-      
-      <p>Auth Friends</p>
-      <div className='links'>
-        <Link to="/friends">Friends</Link>
-        <Link to="/login">Login</Link> 
-        <PrivateRoute path='/friends'component={FriendsList}/>
-      </div>
-    </div>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route component={Login} />
-        
-        
-      </Switch>
-    </div>
-  </Router>
- {/* <FriendsList />  */}
- </>
+      <Router>
+        <div className="App">
+          <div className='App-header-nav'>
+            <p>Auth Friends</p>
+            <div className='links'>
+              <Link to="/friends">Friends</Link>
+              <Link to="/login">Login</Link> 
+            </div>
+          </div>
+          <PrivateRoute path='/friends'component={FriendsList}/>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route component={Login} />
+          </Switch>
+        </div>
+      </Router>
+    </>
   );
 }
-
 export default App;
-
-
-// <div className="App">
-// <h1 className='App-header'>Auth Friends</h1>
-// <Login />
-// </div>

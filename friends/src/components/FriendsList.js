@@ -1,5 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import { Friend } from './Friend';
+import AddFriend from './AddFriend'
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 export const FriendsList = props => {
@@ -14,8 +15,13 @@ export const FriendsList = props => {
     })
   },[])
   return (
+    <>
+    <div className='addFormWrap'>
+      <AddFriend setFriends={setFriends} />
+    </div>
     <div className='friends-list'>
       {friends.map(friend => <Friend key={friend.id} name={friend.name} age={friend.age} email={friend.email} />)}
     </div>
+    </>
   )
 }
