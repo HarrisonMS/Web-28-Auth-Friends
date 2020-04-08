@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { PrivateRoute } from './utils/PrivateRoute';
 import { FriendsList } from './components/FriendsList'
 import Login from './components/login'
-import axiosWithAuth from './utils/axiosWithAuth';
-import { Friend } from './components/Friend';
 
 function App() {
   return (
