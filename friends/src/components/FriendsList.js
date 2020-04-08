@@ -5,6 +5,7 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 
 export const FriendsList = props => {
   const [ friends, setFriends ] = useState([]);
+  console.log('fidfhsdkafj',friends)
  
   useEffect(() => {
     axiosWithAuth()
