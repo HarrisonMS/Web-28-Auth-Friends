@@ -20,16 +20,16 @@ const Login = () => {
   }
   const handleSubmit = event => {
     event.preventDefault();
-    const endpoint = '/api/login';
+    const endpoint = '/api/auth/login';
 
   axiosWithAuth()
     .post(endpoint, creds)
     .then(response => {
       console.log('res in login post',response)
-      const token = JSON.stringify(response.data.payload);
+      const token = (response.data.token);
       console.log('token stringified',token)
       localStorage.setItem('token', token);
-      history.push('/friends');
+      history.push('/users');
       console.log('history',history)
     })
     .catch(error => console.log('can not seem to login buddy', error));

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { PrivateRoute } from './utils/PrivateRoute';
-import { FriendsList } from './components/FriendsList'
+import { UsersList } from './components/UsersList'
 import Login from './components/login'
 
 function App() {
@@ -11,13 +11,13 @@ function App() {
       <Router>
         <div className="App">
           <div className='App-header-nav'>
-            <p>Auth Friends</p>
+            <p>Auth Users</p>
             <div className='links'>
-              <Link to="/friends">Friends</Link>
+              <Link to="/users">Users</Link>
               <Link to="/login">Login</Link> 
             </div>
           </div>
-          <PrivateRoute path='/friends'component={FriendsList}/>
+          <PrivateRoute path='/users'component={UsersList}/>
           <Switch>
             <Route path="/login" component={Login} />
             <Route component={Login} />

@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const axiosWithAuth = () => {
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = (localStorage.getItem("token"));
   return axios.create({
-    baseURL: "http://localhost:5001",
+    baseURL: "http://localhost:5110",
     headers: {
       Authorization: token
     }
