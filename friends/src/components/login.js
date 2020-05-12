@@ -9,8 +9,8 @@ const Login = () => {
     username: '',
     password: ''
   })
-//onchange handler to set state to value of input fields
-console.log(creds)
+  //onchange handler to set state to value of input fields
+  console.log(creds)
   const handleChange = e => {
     e.preventDefault();
     setCreds({
@@ -20,26 +20,24 @@ console.log(creds)
   }
   const handleSubmit = event => {
     event.preventDefault();
-    const endpoint = '/api/login';
+    const endpoint = '/api/auth/login';
 
-    axiosWithAuth()
-        .post(endpoint, creds)
-        .then(response => {
-          console.log('res in login post',response)
-            const token = JSON.stringify(response.data.payload);
-            console.log('token stringified',token)
-            localStorage.setItem('token', token);
-            history.push('/friends');
-            console.log('history',history)
-        })
-        .catch(error => console.log('can not seem to login buddy', error));
-    
-    setCreds({
+  axiosWithAuth()
+    .post(endpoint, creds)
+    .then(response => {
+      console.log('res in login post',response)
+      const token = (response.data.token);
+      console.log('token stringified',token)
+      localStorage.setItem('token', token);
+      history.push('/users');
+      console.log('history',history)
+    })
+    .catch(error => console.log('can not seem to login buddy', error));
+      setCreds({
         username: '',
         password: ''
-    })
-}
-
+      })
+  }
   return(
     <div className='form-container'>
       <form onSubmit={handleSubmit}>
